@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3; 
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        ul li {
+            background-color: #eee;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" id="quantidade" placeholder="Digite a quantidade" min="1">
+    <button onclick="gerarLista()">Gerar Lista</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+        function gerarLista() {
+            const quantidade = parseInt(document.getElementById("quantidade").value);
+            const lista = document.getElementById("lista");
+
+            lista.innerHTML = "";
+
+            if (!isNaN(quantidade) && quantidade > 0) {
+                for (let i = 1; i <= quantidade; i++) {
+                    let item = document.createElement("li");
+                    item.textContent = `Arthur Marins ${i}`;
+                    lista.appendChild(item);
+                }
+            } else {
+                lista.innerHTML = "<li>Por favor, insira um número válido.</li>";
+            }
+        }
+    </script>
+
+</body>
+</html>
