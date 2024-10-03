@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #mensagem {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo!</h1>
+        <p>Digite seu nome:</p>
+        <input type="text" id="nomeInput" placeholder="Seu nome">
+        <button onclick="entrar()">Clique aqui</button>
+        <p id="mensagem"></p>
+    </div>
+
+    <script>
+        function entrar() {
+            const nome = document.getElementById("nomeInput").value;
+            const mensagem = document.getElementById("mensagem");
+
+            if (nome) {
+                mensagem.textContent = `Olá, ${nome}! Seja bem-vindo.`;
+            } else {
+                mensagem.textContent = "Insira seu nome.";
+            }
+        }
+    </script>
+</body>
+</html>
